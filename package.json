@@ -1,0 +1,21 @@
+{
+  "name": "next-cli",
+  "version": "0.1.0",
+  "description": "next-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "next"
+  ],
+  "bin": {
+    "next-cli": "./bin/next-cli"
+  },
+  "author": "liuzhaozhuo",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "minimist": "^1.2.0"
+  }
+}

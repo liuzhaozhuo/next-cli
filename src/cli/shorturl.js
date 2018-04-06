@@ -1,11 +1,11 @@
 /**
- * 版本命令模块
+ * 短网址命令模块
  */
 
 'use strict';
 
 module.exports = {
     init: () => {
-        console.log('0.1.0');
+        console.log('short url');
     }
 };

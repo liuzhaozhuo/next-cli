@@ -1,18 +1,36 @@
-'use strict'
+/**
+ * 命令行参数处理
+ */
+
+'use strict';
 
 const minimist = require('minimist');
-const version = require('./cli/version')
+const CONFIG = require('./config');
 
 let cfg = {};
+let cli = {};
 
-module.exports = {
+function initCli() {
+    const COMMANDS = CONFIG.COMMANDS
 
-        init: () => {
-            cfg.args = minimist(process.argv)
-            console.log(cfg.args)
-            const cli = cfg.args._[2]
-            if(cli === 'version'){
-                version.init()
-            }
-        }
+    COMMANDS.forEach((cmd) => {
+        cli[cmd] = require(`./cli/${cmd}`)
+    });
 }
+
+function execCli() {
+    cfg.args = minimist(process.argv);
+    Object.keys(cfg.args).some((cmd) => {
+        if(cmd === 'version'){
+            cli['version'].init();
+        }else if(cmd === 'v'){
+            cli['version'].init();
+        }
+    });
+}
+module.exports = {
+    init: () => {
+        initCli();
+        execCli();
+    }
+};

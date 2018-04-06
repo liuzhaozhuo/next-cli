@@ -4,8 +4,10 @@
 
 'use strict';
 
+const packageFile = require('../../package.json');
+
 module.exports = {
     init: () => {
-        console.log('0.1.0');
+        console.log('v' + packageFile.version);
     }
 };

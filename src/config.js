@@ -6,7 +6,7 @@
 
 module.exports = {
     DEFAULT_CMD: 'help',
-    COMMANDS: [
+    COMMAND: [
         'shorturl',
         'help',
         'version',
@@ -20,5 +20,4 @@ module.exports = {
     CLI_MAP: {
         s: 'shorturl',
     },
-    AppKey: 3864007147,
-};
+}; 
